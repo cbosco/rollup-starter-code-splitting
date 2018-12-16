@@ -10,23 +10,38 @@
 	<link rel='stylesheet' href='styles.css'>
 </head>
 <body>
-	<h1>Rollup code-splitting demo</h1>
+	<h1>&lt;app-store&gt;, &lt;app-form&gt;, &lt;app-todos&gt; </h1>
+	<p>
+	This example shows how to use <strong>parent</strong> factory 
+	to create simple application with shared state between custom elements.
+	</p>
 
-	<p><a href='https://github.com/rollup/rollup-starter-code-splitting'>See the source code on GitHub</a></p>
+	<section>
+		<h2>Static in &lt;app-root&gt;</h2>
+		<pre>
+		&lt;app-store todos='["One", "Two"]'&gt;
+		&lt;app-todos&gt;&lt;/app-todos&gt;
+		&lt;app-form&gt;&lt;/app-form&gt;
+		&lt;/app-store&gt;
+		</pre>
 
-	<div id='a'>
-		<div data-used-by='a'></div>
-		<div data-used-by='both'></div>
-	</div>
+		<section>
+			<!-- code example -->
+			<app-root></app-root>
+			<!-- code example -->
+		</section>
 
-	<div id='b'>
-		<div data-used-by='b'></div>
-		<div data-used-by='both'></div>
-	</div>
+		<p>
+			Use form to add todo to the list. Click on todo on list to remove it. Change default todos in &ltapp-root&gt; render method.
+		</p>
+	</section>
 
-	<script>
-		import("/module/main-a.js");
-		import("/module/main-b.js");
+	<!-- window.hybrids -->
+	<script src="https://unpkg.com/hybrids@1.5.0/dist/hybrids.js"></script>
+	<script type="module">
+		//import("/module/main-a.js");
+		//import("/module/main-b.js");
+		import("/module/index.js");
 	</script>
 </body>
 </html>
