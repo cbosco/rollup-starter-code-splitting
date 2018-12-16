@@ -27,18 +27,6 @@
 	<script>
 		import("/module/main-a.js");
 		import("/module/main-b.js");
-		window.supportsDynamicImport = true;
-	</script>
-	<script>
-		if (!window.supportsDynamicImport) {
-			const systemJsLoaderTag = document.createElement('script');
-			systemJsLoaderTag.src = 'https://unpkg.com/systemjs@2.0.0/dist/s.min.js';
-			systemJsLoaderTag.addEventListener('load', function () {
-				System.import('./nomodule/main-a.js');
-				System.import('./nomodule/main-b.js');
-			});
-			document.head.appendChild(systemJsLoaderTag);
-		}
 	</script>
 </body>
 </html>
