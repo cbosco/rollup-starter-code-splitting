@@ -1,7 +1,6 @@
 {
-  "name": "rollup-starter-code-splitting",
+  "name": "web-components-imports-example",
   "devDependencies": {
-    "npm-run-all": "^4.1.3",
     "serve": "^6.5.8"
   },
   "scripts": {
